@@ -8,36 +8,35 @@ const Home = () => {
   const [movies, setMovies] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  console.log(movies);
   const totalPages = movies?.total_pages;
-  console.log(totalPages);
-
-  const page = searchParams.get("page") ?? 1;
+  const page = Number(searchParams.get("page")) || 1;
 
   useEffect(() => {
     fetchTrendingMovies(page).then(setMovies);
   }, [page]);
 
-  const incrementPage = (page) => {
-    if (page === "...") {
-      return;
-    }
+  const handlePageChange = (page) => {
+    if (page === "...") return;
     setSearchParams({
       page,
     });
   };
 
   if (!movies) return;
-  console.log(movies);
 
   console.log("render in component");
   return (
     <main>
+      <Pagination
+        page={page}
+        total={totalPages}
+        onPageChange={handlePageChange}
+      />
       <MovieList movies={movies.results} />
       <Pagination
         page={page}
-        incrementPage={incrementPage}
         total={totalPages}
+        onPageChange={handlePageChange}
       />
     </main>
   );

@@ -1,21 +1,29 @@
+import {
+  List,
+  ListItem,
+  MovieDescription,
+  MovieImage,
+  MovieTitle,
+} from "./MovieList.styled";
+
 const MovieList = ({ movies }) => {
   return (
-    <ul>
+    <List>
       {movies.map((movie) => (
-        <li key={movie.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+        <ListItem key={movie.id}>
+          <MovieImage
+            src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
             alt={`poster of "${movie.title}" movie`}
           />
-          <h2>{movie.title}</h2>
-          <p>
+          <MovieTitle>{movie.title}</MovieTitle>
+          <MovieDescription>
             <span>{movie.genre_ids.join(", ")}</span>
             <br />
             <span>{movie.release_date.slice(0, 4)}</span>
-          </p>
-        </li>
+          </MovieDescription>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };
 
