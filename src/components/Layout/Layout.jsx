@@ -12,7 +12,6 @@ import { ReactComponent as Icon } from "../../images/film.svg";
 import { Outlet } from "react-router-dom";
 
 const Layout = (props) => {
-  console.log(props);
   return (
     <>
       <Header>

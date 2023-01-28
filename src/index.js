@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import App from "./components/App";
 import { theme } from "./constants/theme";
 import "./index.css";
+import { fetchTrendingMovies } from "./services/tmdbAPI.service";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,3 +14,5 @@ root.render(
     </ThemeProvider>
   </React.StrictMode>
 );
+
+console.log(fetchTrendingMovies());
