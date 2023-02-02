@@ -1,3 +1,4 @@
+import { ReactComponent as Icon } from "../../images/film.svg";
 import {
   Navigation,
   NavigationList,
@@ -5,13 +6,14 @@ import {
   HeaderLink,
   HeaderContainer,
   NavigationListItem,
-  Input,
+  Footer,
+  FooterText,
+  LogoText,
 } from "./Layout.styled";
 
-import { ReactComponent as Icon } from "../../images/film.svg";
 import { Outlet } from "react-router-dom";
 
-const Layout = (props) => {
+const Layout = () => {
   return (
     <>
       <Header>
@@ -19,30 +21,22 @@ const Layout = (props) => {
           <Navigation>
             <HeaderLink href="/">
               <Icon />
-              <span>Filmoteka</span>
+              <LogoText>Filmoteka</LogoText>
             </HeaderLink>
             <NavigationList>
               <NavigationListItem>Home</NavigationListItem>
               <NavigationListItem>My Library</NavigationListItem>
             </NavigationList>
           </Navigation>
-
-          <form action="">
-            <label htmlFor="">
-              <Input type="text" placeholder="Movie search" />
-            </label>
-          </form>
         </HeaderContainer>
       </Header>
 
       <Outlet />
 
-      <footer>
-        <p>
-          &#169; 2020 | All Rights Reserved | Developed with love by GoIT
-          Students
-        </p>
-      </footer>
+      <Footer>
+        <FooterText>&#169; 2020 | All Rights Reserved |</FooterText>
+        <FooterText> Developed with love by GoIT Students</FooterText>
+      </Footer>
     </>
   );
 };

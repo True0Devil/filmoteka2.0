@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import image from "../../images/bg.png";
+import image from "../../images/header-mobile.jpg";
 
 export const Header = styled.header`
+  position: relative;
+
   background-image: url(${image});
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
 export const HeaderContainer = styled.div`
-  padding: 40px 32px 80px;
+  padding: 40px 32px 168px;
 `;
 
 export const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
 `;
 
 export const HeaderLink = styled(Link)`
@@ -26,6 +27,12 @@ export const HeaderLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
   letter-spacing: 1.16;
+`;
+
+export const LogoText = styled.span`
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 export const NavigationList = styled.ul`
@@ -47,28 +54,18 @@ export const NavigationListItem = styled.li`
   }
 `;
 
-export const Input = styled.input`
-  display: block;
+export const Footer = styled.footer`
+  background-color: #f7f7f7;
 
-  background-color: transparent;
-  border: none;
-  margin: 0 auto;
-  padding: 4px 4px;
-
-  width: 100%;
-
-  font-size: 14px;
-  color: ${({ theme }) => theme.colors.white};
-  outline: none;
-
-  border-bottom: 0.5px solid #ffffff;
-
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.white};
-    font-weight: 400;
-    font-size: 14px;
-    opacity: 1;
-  }
+  padding: 30px 0;
+  text-align: center;
 `;
 
-// Чистый ShelbyWalk Скутер ShelbyWalk Идеалыч ShelbyWalk Пантелеич ShelbyWalk Темель ShelbyWalk
+export const FooterText = styled.span`
+  margin: 0 0 10px 0;
+  display: block;
+
+  font-weight: 400;
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.gray};
+`;

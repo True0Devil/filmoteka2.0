@@ -4,8 +4,6 @@ import { BtnContainer, BtnList, Button } from "./Pagination.styled";
 const Pagination = ({ page, onPageChange, total }) => {
   const buttons = usePagination(page, total);
 
-  console.log("custom", buttons);
-
   return (
     <BtnContainer>
       <BtnList>

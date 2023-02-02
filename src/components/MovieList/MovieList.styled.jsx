@@ -23,6 +23,8 @@ export const MovieImage = styled.img`
   display: block;
   width: 100%;
   border-radius: 5px;
+
+  margin-bottom: 10px;
 `;
 
 export const MovieTitle = styled.h2`
@@ -38,4 +40,11 @@ export const MovieDescription = styled.p`
   margin: 0;
 
   color: ${({ theme }) => theme.colors.orange};
+`;
+
+export const ReleaseDate = styled.span`
+  &::before {
+    content: "|";
+    margin: 0 4px;
+  }
 `;

@@ -14,3 +14,17 @@ export const fetchTrendingMovies = async (page = 1) => {
 
   return data;
 };
+
+export const fetchMovies = async (query, page = 1) => {
+  const { data } = await tmbdAPI.get("search/movie", {
+    params: {
+      query,
+      page,
+      api_key: API_KEY,
+    },
+  });
+
+  console.log(data);
+
+  return data;
+};

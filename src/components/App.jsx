@@ -5,6 +5,12 @@ const Layout = lazy(() => import("./Layout/Layout"));
 const Home = lazy(() => import("pages/Home/Home"));
 
 function App() {
+  // const [searchQuery, setSearchQuery] = useState("");
+
+  // const handleSubmit = (value) => {
+  //   setSearchQuery(value.toLowerCase().trim());
+  // };
+
   return (
     <BrowserRouter basename="filmoteka2.0">
       <Routes>
