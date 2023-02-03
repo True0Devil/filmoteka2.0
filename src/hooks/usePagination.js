@@ -16,4 +16,6 @@ export const usePagination = (page, total) => {
   else {
     return [1, 2, 3, 4, 5, "...", total];
   }
+
+  
 };

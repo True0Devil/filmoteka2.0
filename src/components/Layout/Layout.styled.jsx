@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import image from "../../images/header-mobile.jpg";
+import image2x from "../../images/2x-header-mobile.jpg";
+import tablet from "../../images/header-tablet.jpg";
+import tablet2x from "../../images/2x-header-tablet.jpg";
+import desktop from "../../images/header-desktop.jpg";
+import desktop2x from "../../images/2x-header-desktop.jpg";
 
 export const Header = styled.header`
   position: relative;
@@ -8,6 +13,33 @@ export const Header = styled.header`
   background-image: url(${image});
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+
+  @media screen and (max-width: 767px) and (min-device-pixel-ratio: 2),
+    screen and (max-width: 767px) and (min-resolution: 192dpi),
+    screen and (max-width: 767px) and (min-resolution: 2dppx) {
+    background-image: url(${image2x});
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    background-image: url(${tablet});
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) and (min-device-pixel-ratio: 2),
+    screen and (min-width: 768px) and (max-width: 1279px) and (min-resolution: 192dpi),
+    screen and (min-width: 768px) and (max-width: 1279px) and (min-resolution: 2dppx) {
+    background-image: url(${tablet2x});
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: url(${desktop});
+  }
+
+  @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2),
+    screen and (min-width: 1280px) and (min-resolution: 192dpi),
+    screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+    background-image: url(${desktop2x});
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -63,9 +95,12 @@ export const Footer = styled.footer`
 
 export const FooterText = styled.span`
   margin: 0 0 10px 0;
-  display: block;
 
   font-weight: 400;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.gray};
+
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
 `;

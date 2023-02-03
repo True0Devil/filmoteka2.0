@@ -4,6 +4,7 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: baseline;
 
   padding: 0;
   margin: 0 auto;
@@ -12,16 +13,34 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  flex-basis: 280px;
+  /* flex-basis: 280px; */
+  display: inline-block;
 
   &:not(:last-child) {
     margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    &:not(:nth-child(2n)) {
+      margin-right: 32px;
+    }
+
+    &:nth-child(-n + 2) {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    &:not(:nth-child(3n)) {
+      margin-right: 16px;
+    }
   }
 `;
 
 export const MovieImage = styled.img`
   display: block;
-  width: 100%;
+  /* width: 100%; */
+  /* height: 450px; */
   border-radius: 5px;
 
   margin-bottom: 10px;

@@ -50,18 +50,21 @@ const Home = () => {
 
   return (
     <main>
-      <HeaderContainer type="home" onSubmit={handleSubmit} />
-      <Pagination
-        page={page}
-        total={totalPages}
-        onPageChange={handlePageChange}
-      />
-      {movies.results && <MovieList movies={movies.results} />}
-      <Pagination
-        page={page}
-        total={totalPages}
-        onPageChange={handlePageChange}
-      />
+      <h1 className="visually-hidden">Trending today</h1>
+      <div className="container">
+        <HeaderContainer type="home" onSubmit={handleSubmit} />
+        <Pagination
+          page={page}
+          total={totalPages}
+          onPageChange={handlePageChange}
+        />
+        {movies.results && <MovieList movies={movies.results} />}
+        <Pagination
+          page={page}
+          total={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </main>
   );
 };

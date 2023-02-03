@@ -19,7 +19,7 @@ const Layout = () => {
       <Header>
         <HeaderContainer>
           <Navigation>
-            <HeaderLink href="/">
+            <HeaderLink to="/">
               <Icon />
               <LogoText>Filmoteka</LogoText>
             </HeaderLink>
