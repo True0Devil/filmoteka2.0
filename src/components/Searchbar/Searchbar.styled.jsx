@@ -11,7 +11,7 @@ export const Input = styled.input`
   background-color: transparent;
   border: none;
   margin: 0 auto;
-  padding: 4px 4px;
+  padding: 4px 0;
 
   width: 100%;
 
@@ -26,6 +26,14 @@ export const Input = styled.input`
     font-weight: 400;
     font-size: 14px;
     opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    width: 336px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 394px;
   }
 `;
 

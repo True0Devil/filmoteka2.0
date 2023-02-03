@@ -10,11 +10,14 @@ export const List = styled.ul`
   margin: 0 auto;
 
   list-style: none;
+
+  @media screen and (max-width: 767px){
+    display: block;
+  }
 `;
 
 export const ListItem = styled.li`
-  /* flex-basis: 280px; */
-  display: inline-block;
+  flex-basis: calc((100% - 32px) / 3);
 
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -39,8 +42,7 @@ export const ListItem = styled.li`
 
 export const MovieImage = styled.img`
   display: block;
-  /* width: 100%; */
-  /* height: 450px; */
+  width: 100%;
   border-radius: 5px;
 
   margin-bottom: 10px;

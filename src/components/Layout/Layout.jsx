@@ -12,6 +12,7 @@ import {
 } from "./Layout.styled";
 
 import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
 
 const Layout = () => {
   return (
@@ -31,7 +32,9 @@ const Layout = () => {
         </HeaderContainer>
       </Header>
 
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
 
       <Footer>
         <FooterText>&#169; 2020 | All Rights Reserved |</FooterText>
