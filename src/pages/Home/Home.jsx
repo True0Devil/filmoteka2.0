@@ -19,6 +19,7 @@ const Home = () => {
   const totalPages = movies?.total_pages;
 
   useEffect(() => {
+    setError(false);
     setIsLoading(true);
     if (!searchQuery) {
       fetchTrendingMovies(page).then(setMovies).then(setIsLoading(false));
